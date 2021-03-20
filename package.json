@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "./node_modules/.bin/parcel static/index.html",
+    "start": "node server/index.js", 
     "build": "./node_modules/.bin/parcel build static/index.html"
   },
   "repository": {
