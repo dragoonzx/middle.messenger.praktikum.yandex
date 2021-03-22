@@ -1,0 +1,23 @@
+@charset "UTF-8";
+.search {
+  position: relative;
+}
+.search::before {
+  left: 16px;
+  content: "🔭";
+  position: absolute;
+  right: auto;
+}
+.search__input {
+  background: var(--color-zero);
+  border-radius: 24px;
+  width: 100%;
+  border: none;
+  padding: 8px 16px;
+  padding-left: 40px;
+  color: var(--color-text-second);
+  outline: none;
+}
+.search__input::placeholder {
+  color: var(--color-text-second);
+}

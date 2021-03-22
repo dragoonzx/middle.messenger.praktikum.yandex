@@ -1,0 +1,24 @@
+.link {
+  font-weight: 500;
+  font-size: 12px;
+  text-decoration: none;
+  color: inherit;
+}
+.link_main {
+  color: white;
+}
+.link_main:hover {
+  color: var(--color-success);
+}
+.link_chat {
+  color: var(--color-text-second);
+}
+.link_chat:hover {
+  color: var(--color-40second);
+}
+.link_success {
+  color: var(--color-success);
+}
+.link_warning {
+  color: var(--color-error);
+}

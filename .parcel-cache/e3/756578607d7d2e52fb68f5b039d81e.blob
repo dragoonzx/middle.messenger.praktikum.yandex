@@ -1,0 +1,2 @@
+document.querySelector(".form__button").addEventListener("click",(()=>{(()=>{const e={};Array.from(document.querySelectorAll(".form__field")).forEach((o=>{const r=o.dataset.formKey,t=o.querySelector(".form__field-input").value;e[r]=t})),console.log(e)})()}));
+//# sourceMappingURL=index.HASH_REF_476985e732594f914b1fc2d87fe2a148.js.map

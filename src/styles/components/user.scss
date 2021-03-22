@@ -1,0 +1,88 @@
+.user {
+  position: relative;
+  display: flex;
+
+  &_top {
+    align-items: center;
+  }
+
+  &__current {
+    &.active {
+      width: 4px;
+      height: 48px;
+      left: 0;
+      right: auto;
+      position: absolute;
+      background-color: var(--color-notify);
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__avatar {
+    display: flex;
+    align-items: center;
+  }
+
+  &__image_top {
+    width: 36px;
+    height: 36px;
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+
+  &__name {
+    font-weight: 600;
+    font-size: 12px;
+
+    margin-bottom: 4px;
+  }
+
+  &__message {
+    font-weight: 500;
+    font-size: 12px;
+    color: var(--color-text-second);
+  }
+
+  &__additional {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    font-weight: 500;
+    font-size: 8px;
+  }
+
+  &__time {
+    color: var(--color-text-second);
+  }
+
+  &__messages-new {
+    padding: 4px;
+    background-color: var(--color-notify);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &_online {
+    &::before {
+      content: '';
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background-color: var(--color-success);
+      left: 12px;
+      right: auto;
+      top: 0;
+      bottom: auto;
+      border-radius: 50%;
+    }
+  }
+}

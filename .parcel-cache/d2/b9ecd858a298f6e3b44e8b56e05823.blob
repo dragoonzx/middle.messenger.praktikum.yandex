@@ -1,0 +1,17 @@
+.chat-input {
+  background: var(--color-zero);
+  border-radius: 24px;
+  width: 100%;
+  border: none;
+  padding: 8px 16px;
+  color: var(--color-text-second);
+  outline: none;
+  font: var(--font-family-inter);
+}
+.chat-input::placeholder {
+  color: var(--color-text-second);
+}
+.chat-input_search {
+  padding-left: 40px;
+}
+/*# sourceMappingURL=chat-open.HASH_REF_3f8195aececa3cdda485d65c9d06f180.css.map */

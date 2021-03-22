@@ -1,0 +1,21 @@
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo__icon {
+  margin-right: 4px;
+}
+.logo__title {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family-montserrat);
+}
+.logo__name {
+  font-size: 24px;
+  line-height: 20px;
+}
+.logo__description {
+  font-size: 8px;
+  color: var(--color-text-second);
+}

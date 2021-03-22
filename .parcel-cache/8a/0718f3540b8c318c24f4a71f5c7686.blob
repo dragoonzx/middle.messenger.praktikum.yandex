@@ -1,0 +1,11 @@
+.settings {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.settings__image {
+  width: 132px;
+  height: 132px;
+}

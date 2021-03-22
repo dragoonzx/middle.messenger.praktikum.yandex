@@ -1,0 +1,19 @@
+.link {
+  font-weight: 500;
+  font-size: 12px;
+  text-decoration: none;
+  color: inherit;
+}
+.link_main {
+  color: white;
+}
+.link_main:hover {
+  color: var(--color-success);
+}
+.link_chat {
+  color: var(--color-text-second);
+}
+.link_chat:hover {
+  color: var(--color-40second);
+}
+/*# sourceMappingURL=chat-open.HASH_REF_889b0a2d989d3a73222b04f2288dfc83.css.map */

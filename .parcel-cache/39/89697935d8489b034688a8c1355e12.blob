@@ -1,0 +1,33 @@
+(function () {
+  const logFormData = () => {
+    const fieldsValues = {}
+    const formFields = document.querySelectorAll('.form__field')
+    formFields.forEach(field => {
+      const formKey = field.dataset.formKey
+      const fieldNode = field.querySelector('.form__field-input_file')
+      console.log(fieldNode)
+      if (fieldNode.files[0]) {
+        const fieldValue = field.querySelector('.form__field-input_file').files[0].name
+        fieldsValues[formKey] = fieldValue
+      } else {
+        console.log('no')
+      }
+    })
+    console.log(fieldsValues)
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const inputAvatar = document.querySelector('.form__field-input_file')
+
+    inputAvatar.addEventListener('change', (e) => {
+      console.log(e.target)
+      document.querySelector('.form__field-avatar').textContent = e.target.files[0].name
+    })
+  })
+
+  const submitButton = document.querySelector('.popup__button')
+  submitButton.addEventListener('click', () => {
+    logFormData()
+  })
+
+})()

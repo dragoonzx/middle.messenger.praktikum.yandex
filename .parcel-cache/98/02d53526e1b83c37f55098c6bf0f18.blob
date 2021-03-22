@@ -1,0 +1,27 @@
+(function () {
+  const logFormData = () => {
+    const fieldsValues = {}
+    const formFields = Array.from(document.querySelectorAll('.settings__list-item'))
+    formFields.forEach(field => {
+      const formKey = field.dataset.formKey
+      const fieldValue = field.querySelector('.chat-input').value
+      fieldsValues[formKey] = fieldValue
+    })
+    console.log(fieldsValues)
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const inputAvatar = document.querySelector('.form__field-input_file')
+
+    inputAvatar.addEventListener('change', (e) => {
+      console.log(e)
+      document.querySelector('.form__field-avatar').textContent = e.target.files[0].name
+    })
+  })
+
+  const submitButton = document.querySelector('.settings__button')
+  submitButton.addEventListener('click', () => {
+    logFormData()
+  })
+
+})()

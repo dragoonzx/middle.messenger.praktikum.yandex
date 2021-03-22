@@ -11,5 +11,5 @@ Student project (chat) for yandex praktikum course
 ## How to setup:
 ```
 1. npm i (install dependencies)
-2. npm build (build project to dist directory with parcel)
+2. npm run start (build project to dist directory with parcel & start share static files on port 3000)
 ```

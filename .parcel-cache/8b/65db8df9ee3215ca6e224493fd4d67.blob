@@ -1,0 +1,28 @@
+.onboarding {
+  margin: 0 auto;
+  max-width: 340px;
+  padding: 48px 30px 32px;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-zero);
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.14);
+  border-radius: 0px 0px 12px 12px;
+}
+.onboarding__logo {
+  margin-bottom: 40px;
+}
+.onboarding__link {
+  text-align: center;
+  margin-top: 24px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.onboarding__jupyter {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: auto;
+  top: auto;
+  z-index: var(--layer-bg);
+}
+/*# sourceMappingURL=index.HASH_REF_6cd52a921da12e966f2bc42c6184c345.css.map */

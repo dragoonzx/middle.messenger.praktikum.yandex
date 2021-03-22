@@ -1,0 +1,27 @@
+.chat {
+  display: flex;
+  height: 100%;
+}
+.chat__list {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 310px;
+}
+.chat__list-settings {
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.chat__list-users {
+  display: flex;
+  flex-direction: column;
+}
+.chat__window {
+  flex-basis: calc(100% - 310px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*# sourceMappingURL=chat.HASH_REF_fd7d7079052df6b0090d85c377f83533.css.map */
