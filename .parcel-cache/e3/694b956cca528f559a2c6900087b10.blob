@@ -1,2 +1,0 @@
-!function(){const t=window.mfUtils.logFormData;document.querySelector(".form__button").addEventListener("click",(()=>{t()}))}();
-//# sourceMappingURL=registration.HASH_REF_0038f4cad176ecca1f898d05f259373a.js.map

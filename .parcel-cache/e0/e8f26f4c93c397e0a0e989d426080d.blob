@@ -1,2 +1,0 @@
-!function(){const t=window.mfUtils.logFormData;document.querySelector(".form__button").addEventListener("click",(()=>{t()}))}();
-//# sourceMappingURL=index.HASH_REF_476985e732594f914b1fc2d87fe2a148.js.map

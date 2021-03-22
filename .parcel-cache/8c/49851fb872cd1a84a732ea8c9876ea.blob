@@ -1,2 +1,0 @@
-window.mfUtils={logFormData:(o=".form__field",e=".form__field-input")=>{const r={};Array.from(document.querySelectorAll(o)).forEach((o=>{const l=o.dataset.formKey,t=o.querySelector(e).value;r[l]=t})),console.log(r)}};
-//# sourceMappingURL=settings-data.HASH_REF_ff74b069e68155d8a0c741f22992d431.js.map

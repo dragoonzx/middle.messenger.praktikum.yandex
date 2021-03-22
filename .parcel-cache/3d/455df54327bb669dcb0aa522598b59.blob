@@ -1,2 +1,0 @@
-.popup{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;height:100%;display:flex;align-items:center;justify-content:center;background-color:var(--color-40black)}.popup__content{background:#30444e;box-shadow:0 0 6px rgba(0,0,0,.14);border-radius:12px;padding:40px 30px}.popup__title{text-align:center;font-weight:500;font-size:16px;margin-bottom:48px}.popup__form{min-width:280px}.popup__button{margin-top:32px}
-/*# sourceMappingURL=settings-avatar.HASH_REF_354fb136dd58c0400f11e4cf3d28d466.css.map */

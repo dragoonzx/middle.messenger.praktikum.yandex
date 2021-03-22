@@ -1,2 +1,0 @@
-document.querySelector(".message__button").addEventListener("click",(()=>{(()=>{const e={},t=document.querySelector(".message__input");e.message=t.value,console.log(e)})()}));
-//# sourceMappingURL=chat-open.HASH_REF_f226ac064162538ea8c195b592855f50.js.map

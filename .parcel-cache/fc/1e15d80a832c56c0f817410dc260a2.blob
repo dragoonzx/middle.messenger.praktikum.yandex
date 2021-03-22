@@ -1,2 +1,0 @@
-.chat-input{background:var(--color-zero);border-radius:24px;width:100%;border:none;padding:8px 16px;color:var(--color-text-second);outline:none;font:var(--font-family-inter);font-weight:500;font-size:12px}.chat-input::placeholder{color:var(--color-text-second)}.chat-input_search{padding-left:40px}
-/*# sourceMappingURL=chat.HASH_REF_829a31baf1e6fcddb285b74fb940adf5.css.map */

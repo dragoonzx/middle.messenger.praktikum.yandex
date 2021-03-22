@@ -1,2 +1,0 @@
-!function(){const t=window.mfUtils.logFormData;console.log(window.mfUtils),document.querySelector(".settings__button").addEventListener("click",(()=>{t(".settings__list-item",".chat-input")}))}();
-//# sourceMappingURL=settings-data.HASH_REF_8176c46ef11ef3570d69af59ca2da489.js.map
