@@ -4,7 +4,7 @@
   "description": "README",
   "scripts": {
     "dev": "./node_modules/.bin/parcel static/*.pug",
-    "start": "npm run build && node server/index.js",
+    "start": "./node_modules/.bin/parcel build static/*.pug && node server/index.js",
     "build": "./node_modules/.bin/parcel build static/*.pug"
   },
   "repository": {
