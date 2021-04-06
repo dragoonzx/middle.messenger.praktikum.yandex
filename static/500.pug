@@ -1,0 +1,16 @@
+extends includes/layout.pug
+
+block append styles
+  +link-styles('../src/styles/components/link.scss')
+  +link-styles('../src/styles/pages/404.scss')
+
+block content
+  .page-404
+    h1.page-404__header 500
+    p.page-404__text Мы уже фиксим
+    a.link.link_success.page-404__link(
+      href='chat.pug'
+    ) Назад к чатам
+    img.page-404__bg-image(
+      src='images/500.png'
+    )

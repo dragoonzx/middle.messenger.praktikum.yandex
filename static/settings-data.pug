@@ -1,0 +1,36 @@
+extends includes/layout.pug
+
+block append styles
+  +link-styles('../src/styles/components/link.scss')
+  +link-styles('../src/styles/components/input.scss')
+  +link-styles('../src/styles/components/button.scss')
+  +link-styles('../src/styles/components/form.scss')
+  +link-styles('../src/styles/pages/settings.scss')
+
+block content
+  .settings
+    .settings__avatar
+      img.settings__image(
+        src='images/avatar-high.png'
+      )
+    .settings__name Иван
+    .settings__fields
+      form.form.settings__form(
+        onsubmit='return false'
+      )
+        ul.settings__list
+          each val, key in { email: ['Почта', 'pochta@yandex.ru'], login: ['Логин', 'ivanivanov'], first_name: ['Имя', 'Иван'], second_name: ['Фамилия', 'Иванов'], display_name: ['Имя в чате', 'Иван'], phone: ['Телефон', '+7 (909) 967 30 30'] }
+            li.settings__list-item(
+              data-form-key=key
+            )
+              span.list-item_main= val[0]
+              if val[1]
+                input.chat-input.list-item(
+                  value=val[1]
+                )
+        button.button.button_primary.settings__button Сохранить
+
+block append scripts
+  script(
+    src='../src/modules/settings/settings-password.js'
+  )

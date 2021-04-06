@@ -1,0 +1,24 @@
+:root {
+  /* colors: */
+  --color-bg: #22343C;
+  --color-zero: #30444E;
+
+  --color-success: #3DD598;
+  --color-error: #FF565E;
+  --color-warning: #FF974A;
+  --color-notify: #0062FF;
+  /* color with opacity 0.4: */
+  --color-40second: #96A7AF66;
+  --color-40black: #00000066;
+
+  --color-text-primary: #fff;
+  --color-text-second: #96A7AF;
+
+
+  /* z-index layers: */
+  --layer-bg: -1;
+  --layer-zero: 0;
+  --layer-first: 1;
+  --layer-second: 2;
+  --layer-third: 3;
+}

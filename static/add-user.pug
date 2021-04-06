@@ -1,0 +1,33 @@
+extends includes/layout.pug
+
+block append styles
+  +link-styles('../src/styles/components/link.scss')
+  +link-styles('../src/styles/components/search.scss')
+  +link-styles('../src/styles/components/form.scss')
+  +link-styles('../src/styles/components/button.scss')
+  +link-styles('../src/styles/components/input.scss')
+  +link-styles('../src/styles/components/user.scss')
+  +link-styles('../src/styles/components/popup.scss')
+  +link-styles('../src/styles/pages/chat.scss')
+
+block content
+  include includes/chat-content.pug
+  .popup
+    .popup__content
+      .popup__title Добавить пользователя
+      form.form.popup__form(
+        onsubmit='return false'
+      )
+        each field, key in { login: 'Логин' }
+          label.form__field(
+            data-form-key=key
+          ) #{field}
+            input.form__field-input(
+              type='text'
+            )
+        button.button.button_primary.popup__button Добавить пользователя
+
+block append scripts
+  script(
+    src='../src/modules/chat/add-user.js'
+  )
