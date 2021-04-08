@@ -1,5 +1,4 @@
-### Добавьте ниже ссылку на открытый pull request.
-
+[![wemake-frontend-styleguide](https://img.shields.io/badge/style-wemake-000000.svg)](https://github.com/wemake-services/wemake-frontend-styleguide)
 ## Project status:
 In progress
 
@@ -15,4 +14,21 @@ Student project (chat) for yandex praktikum course
 ```
 1. npm i (install dependencies)
 2. npm run start (build project to dist directory with parcel & start share static files on port 3000)
+```
+
+## Linting:
+JavaScript and TypeScript:
+I stick to wemake code style. It is just like standard config, but stricter
+
+To lint js (ts also) run this command:
+```
+npm run lint:js
+```
+
+Styles:
+I use stylelint to validate scss files, also strict rules thanks to wemake + accessibility checks thanks to stylelint-a11y
+
+To lint styles run this command:
+```
+npm run lint:styles
 ```
