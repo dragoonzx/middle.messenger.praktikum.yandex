@@ -2,14 +2,11 @@
   margin: 0 auto;
   max-width: 340px;
   padding: 48px 30px 32px;
-
   display: flex;
   flex-direction: column;
-
   background: var(--color-zero);
-  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.14);
-  border-radius: 0px 0px 12px 12px;
-
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.14);
+  border-radius: 0 0 12px 12px;
 
   &__logo {
     margin-bottom: 40px;

@@ -24,6 +24,8 @@ module.exports = {
       'groups': ['module', '/^~//', '/^@//'],
       'alphabetize': { 'order': 'asc', 'ignoreCase': false },
     }],
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': ['error'],
   },
 
   'parserOptions': {

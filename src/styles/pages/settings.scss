@@ -12,17 +12,17 @@
 
   &__name {
     font-weight: 600;
-    font-size: 16px;
-
+    font-size: var(--font-size-md);
     margin-top: 16px;
   }
 
   &__avatar {
     position: relative;
 
-    &:hover {
+    &:hover,
+    &:focus {
       &::before {
-        content: 'Поменять аватар';
+        content: attr(aria-label);
         position: absolute;
         top: 0;
         left: 0;
@@ -33,6 +33,7 @@
         justify-content: center;
         background: var(--color-40black);
         border-radius: 50%;
+        text-align: center;
       }
     }
   }
@@ -51,7 +52,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-
       margin-top: 12px;
 
       &:not(:last-child) {
@@ -76,12 +76,12 @@
 
 .list-item {
   font-weight: 500;
-  font-size: 12px;
-  color: #96A7AF;
+  font-size: var(--font-size-xs);
+  color: rgb(150, 167, 175);
   max-width: 200px;
 
   &_main {
     font-weight: 500;
-    font-size: 12px;
+    font-size: var(--font-size-xs);
   }
 }

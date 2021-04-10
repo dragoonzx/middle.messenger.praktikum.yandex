@@ -5,12 +5,12 @@
   border: none;
   padding: 12px 0;
   font-weight: 500;
-  font-size: 14px;
+  font-size: var(--font-size-sm);
   cursor: pointer;
   outline: none;
 
   &_primary {
-    background: #3DD598;
-    color: white;
+    background: rgb(61, 213, 152);
+    color: rgb(255, 255, 255);
   }
 }

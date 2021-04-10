@@ -1,13 +1,14 @@
 .link {
   font-weight: 500;
-  font-size: 12px;
+  font-size: var(--font-size-xs);
   text-decoration: none;
   color: inherit;
 
   &_main {
-    color: white;
+    color: rgb(255, 255, 255);
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: var(--color-success);
     }
   }
@@ -15,7 +16,8 @@
   &_chat {
     color: var(--color-text-second);
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: var(--color-40second);
     }
   }

@@ -9,10 +9,15 @@ block append styles
 
 block content
   .settings
-    .settings__avatar
-      img.settings__image(
-        src='images/avatar-high.png'
+    a.link(
+      href='settings-avatar.pug'
+    )
+      .settings__avatar(
+        aria-label='Поменять аватар'
       )
+        img.settings__image(
+          src='images/avatar-high.png'
+        )
     .settings__name Иван
     .settings__fields
       form.form.settings__form(
@@ -32,5 +37,5 @@ block content
 
 block append scripts
   script(
-    src='../src/modules/settings/settings-password.js'
+    src='../src/modules/settings/settings-password.ts'
   )
