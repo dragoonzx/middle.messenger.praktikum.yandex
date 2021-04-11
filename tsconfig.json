@@ -1,5 +1,3 @@
-// tsconfig.json
-// assuming your ts sources are in ./src/
 {
   "compilerOptions": {
     "target": "ES6",

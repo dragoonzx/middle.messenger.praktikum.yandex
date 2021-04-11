@@ -1,6 +1,3 @@
-// Configuration for StyleLint
-// See: https://stylelint.io/user-guide/configuration/
-
 module.exports = {
   'extends': [
     '@wemake-services/stylelint-config-scss',
