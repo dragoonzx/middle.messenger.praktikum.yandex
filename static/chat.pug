@@ -8,52 +8,9 @@ block append styles
   +link-styles('../src/styles/pages/chat.scss')
 
 block content
-  .chat
-    .chat__userlist
-      .userlist-settings.chat__userlist-settings
-        a.link.link_chat.userlist-settings__link(
-          href='settings.pug'
-        )
-          | Профиль ⚡
-        .search.userlist-settings__search(
-          aria-label='🔭'
-        )
-          input.chat-input.chat-input_search.search__input(
-            type='search'
-            placeholder='Поиск'
-          )
-      .chat__userlist-users
-        ul.chat__userlist-list
-          each val in [1, 2, 3, 4, 5, 6]
-            li
-              a.link(href='chat-open.pug')
-                .user.user_online.chat__user
-                  .user__current
-                  .user__avatar
-                    img(
-                      src='images/avatar.png'
-                    )
-                  .user__contacts
-                    .user__name Андрей
-                    .user__message Друзья, у меня для вас особенный выпуск новостей!...
-                  .user__additional
-                    .user__time 10:49
-                    .user__messages-new 2
-          each val in [7, 1, 1, 1, 1, 1]
-            li
-              .user.chat__user
-                .user__current
-                .user__avatar
-                  img(
-                    src='images/avatar.png'
-                  )
-                .user__contacts
-                  .user__name Андрей
-                  .user__message Друзья, у меня для вас особенный выпуск новостей!...
-                .user__additional
-                  .user__time 10:49
-                  .user__messages-new 4
+  #root
 
-    .chat__window.chat__window_empty
-      | Выберите чат чтобы отправить сообщение
-
+block append scripts
+  script(
+    src='../src/pages/chat/index.ts'
+  )

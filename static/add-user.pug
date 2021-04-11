@@ -12,22 +12,12 @@ block append styles
 
 block content
   include includes/chat-content.pug
-  .popup
-    .popup__content
-      .popup__title Добавить пользователя
-      form.form.popup__form(
-        onsubmit='return false'
-      )
-        each field, key in { login: 'Логин' }
-          label.form__field(
-            data-form-key=key
-          ) #{field}
-            input.form__field-input(
-              type='text'
-            )
-        button.button.button_primary.popup__button Добавить пользователя
+  #root
 
 block append scripts
+  script(
+    src='../src/pages/add-user/index.ts'
+  )
   script(
     src='../src/modules/chat/add-user.ts'
   )

@@ -8,48 +8,12 @@ block append styles
   +link-styles('../src/styles/pages/onboarding.scss')
 
 block content
-  .onboarding
-    .logo.onboarding__logo
-      .logo__icon
-        img(
-          src='images/icons/logo-star.svg'
-        )
-      .logo__title
-        .logo__name SPACEHOUSE
-        .logo__description Cybernetically enhanced communication
-    form.form.login.onboarding__form(
-      onsubmit='return false'
-    )
-      .form__title Регистрация
-      .form__fields
-        each field, key in { email: ['Почта', 'Некорректная почта'], login: ['Логин', 'Логин должен быть больше 6 символов'], first_name: ['Имя', ''], second_name: ['Фамилия', ''], phone: ['Телефон', 'Некорректный телефон'], password: ['Пароль', 'Пароль должен быть больше 3-х символов'], password_repeat: ['Пароль (ещё раз)', 'Пароль должен быть больше 3-х символов'] }
-          label.form__field(
-            data-form-key=key
-            aria-label=field[1]
-          ) #{field[0]}
-            if key === 'email'
-              input.form__field-input(
-                type='email'
-              )
-            else if key === 'phone'
-              input.form__field-input(
-                type='tel'
-              )
-            else if key === 'password' || key === 'password_repeat'
-              input.form__field-input(
-                type='password'
-              )
-            else
-              input.form__field-input
-      button.button.button_primary.form__button Зарегистрироваться
-    a.link.link_main.onboarding__link(
-      href='index.pug'
-    ) Войти
-    img.onboarding__jupyter(
-      src='images/jupyter.png'
-    )
+  #root
 
 block append scripts
+  script(
+    src='../src/pages/registration/index.ts'
+  )
   script(
     src='../src/modules/registration/registration.ts'
   )

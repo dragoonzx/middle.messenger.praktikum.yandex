@@ -45,7 +45,6 @@ const validationInitializer = (
 
     formElement.addEventListener(event, () => {
       if (validationExp && !validationExp.test(formInput.value)) {
-        console.log(formInput)
         toggleFormFieldValidation(formInput, true)
       } else {
         toggleFormFieldValidation(formInput, false)
