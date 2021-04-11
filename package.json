@@ -4,7 +4,7 @@
   "description": "README",
   "scripts": {
     "dev": "./node_modules/.bin/parcel static/*.pug",
-    "start": "./node_modules/.bin/parcel static/*.pug && node server/index.js",
+    "start": "./node_modules/.bin/parcel build static/*.pug && node server/index.js",
     "build": "./node_modules/.bin/parcel build static/*.pug",
     "lint:js": "eslint --cache --ext .js,.ts,.json --ignore-path .gitignore .",
     "lint:styles": "stylelint 'src/styles/**/*.{scss,css}'"
