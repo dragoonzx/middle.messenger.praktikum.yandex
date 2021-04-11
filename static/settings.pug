@@ -1,0 +1,8 @@
+extends includes/layout.pug
+
+block append styles
+  +link-styles('../src/styles/components/link.scss')
+  +link-styles('../src/styles/pages/settings.scss')
+
+block content
+  include includes/settings-content.pug

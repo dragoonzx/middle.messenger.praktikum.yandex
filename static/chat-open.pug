@@ -1,0 +1,16 @@
+extends includes/layout.pug
+
+block append styles
+  +link-styles('../src/styles/components/link.scss')
+  +link-styles('../src/styles/components/search.scss')
+  +link-styles('../src/styles/components/input.scss')
+  +link-styles('../src/styles/components/user.scss')
+  +link-styles('../src/styles/pages/chat.scss')
+
+block content
+  include includes/chat-content.pug
+
+block append scripts
+  script(
+    src='../src/modules/chat/chat.ts'
+  )

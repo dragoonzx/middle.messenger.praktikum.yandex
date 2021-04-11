@@ -1,0 +1,30 @@
+.onboarding {
+  margin: 0 auto;
+  max-width: 340px;
+  padding: 48px 30px 32px;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-zero);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.14);
+  border-radius: 0 0 12px 12px;
+
+  &__logo {
+    margin-bottom: 40px;
+  }
+
+  &__link {
+    text-align: center;
+    margin-top: 24px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  &__jupyter {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    top: auto;
+    z-index: var(--layer-bg);
+  }
+}

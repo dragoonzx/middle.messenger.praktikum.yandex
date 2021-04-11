@@ -1,0 +1,16 @@
+.button {
+  background: transparent;
+  border-radius: 8px;
+  width: 100%;
+  border: none;
+  padding: 12px 0;
+  font-weight: 500;
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  outline: none;
+
+  &_primary {
+    background: rgb(61, 213, 152);
+    color: rgb(255, 255, 255);
+  }
+}
