@@ -22,10 +22,11 @@ block content
     )
       .form__title Вход
       .form__fields
-        each field, key in {login:'Логин', password: 'Пароль'}
+        each field, key in {login: ['Логин', 'Логин должен быть больше 6 символов'], password: ['Пароль', 'Пароль должен быть больше 3-х символов']}
           label.form__field(
             data-form-key=key
-          ) #{field}
+            aria-label=field[1]
+          ) #{field[0]}
             if key === 'password'
               input.form__field-input(
                 type='password'
@@ -33,12 +34,6 @@ block content
             else
               input.form__field-input
       button.button.button_primary.form__button Авторизоваться
-      //- a(
-      //-   href="chat.pug"
-      //- )
-      //-   button.button.button_primary.form__button(
-      //-     (click)="play()"
-      //-   ) Авторизоваться
     a.link.link_main.onboarding__link(
       href='registration.pug'
     ) Нет аккаунта?

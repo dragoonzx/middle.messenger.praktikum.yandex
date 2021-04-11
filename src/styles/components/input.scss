@@ -17,4 +17,8 @@
   &_search {
     padding-left: 40px;
   }
+
+  &.form__field-input_invalid {
+    border: 1px solid var(--color-error);
+  }
 }
