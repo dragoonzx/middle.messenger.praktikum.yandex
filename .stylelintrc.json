@@ -21,5 +21,8 @@
       }
     ],
     "a11y/content-property-no-static-value": true
-  }
+  },
+  "ignoreFiles": [
+    "dist/**/*.css"
+  ]
 }
