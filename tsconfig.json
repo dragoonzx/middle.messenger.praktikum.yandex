@@ -6,7 +6,7 @@
     "noUnusedParameters": true,
     "sourceMap": true,
     "strictNullChecks": true,
-    "baseUrl": "./src",
+    "baseUrl": "./src"
   },
   "include": ["src/**/*"]
 }
