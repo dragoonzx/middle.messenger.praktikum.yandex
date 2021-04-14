@@ -8,7 +8,6 @@ enum Methods {
 type MethodsTypes = keyof typeof Methods
 
 type RequestOptions = {
-  method: MethodsTypes
   data: Record<string, unknown>
   headers: Record<string, string>
   timeout?: number

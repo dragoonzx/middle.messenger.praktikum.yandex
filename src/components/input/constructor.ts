@@ -7,7 +7,10 @@ class Input {
 
   toString(): string {
     if (!this.type) {
-      return 'input.form__field-input'
+      return `input.form__field-input(
+                name='login'
+              )
+      `
     }
     return `input.form__field-input(
               type='${this.type}'

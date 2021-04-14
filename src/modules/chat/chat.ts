@@ -12,10 +12,4 @@ const logChatFormData = (): void => {
   console.log(fieldsValues)
 }
 
-const chatSubmitButton = document.querySelector('.message__button')
-
-if (chatSubmitButton) {
-  chatSubmitButton.addEventListener('click', () => {
-    logChatFormData()
-  })
-}
+export { logChatFormData }
