@@ -34,32 +34,4 @@ const logSettingsFormData = (): void => {
   console.log(fieldsValues)
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const inputAvatar = document.querySelector(INPUT_FILE_FIELD)
-
-  if (inputAvatar) {
-    inputAvatar.addEventListener('change', (fileChange: Event) => {
-      const avatarNode =
-        document.querySelector('.form__field-avatar') as HTMLElement
-      const fileList = (fileChange.target as HTMLInputElement)?.files
-      const fileValue = fileList ? fileList[0] : undefined
-      if (avatarNode) {
-        if (fileList && fileValue) {
-          avatarNode.textContent = fileValue.name
-          avatarNode.style.color = 'var(--color-warning)'
-        } else {
-          avatarNode.textContent = 'Нужно выбрать файл'
-          avatarNode.style.color = 'var(--color-error)'
-        }
-      }
-    })
-  }
-})
-
-const settingsSubmitButton = document.querySelector('.popup__button')
-
-if (settingsSubmitButton) {
-  settingsSubmitButton.addEventListener('click', () => {
-    logSettingsFormData()
-  })
-}
+export { logSettingsFormData, INPUT_FILE_FIELD }

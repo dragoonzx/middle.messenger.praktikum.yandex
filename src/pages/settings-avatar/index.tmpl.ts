@@ -10,6 +10,7 @@ const tmpl = `.popup
                         data-form-key=key
                       ) #{field}
                         input.form__field-input.form__field-input_file(
+                          accept="image/*"
                           type='file'
                         )
                       .form__field-avatar

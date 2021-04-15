@@ -14,7 +14,8 @@ class HTTPTransport implements RESTLayer {
   ): Promise<XMLHttpRequest['responseType']> {
     return this.request(
       url,
-      { ...options, method },
+      { ...options },
+      method,
       options.timeout,
     )
   }
@@ -66,9 +67,10 @@ class HTTPTransport implements RESTLayer {
   private request(
     url: string,
     options: RequestOptions,
+    method: MethodsTypes = Methods.GET,
     timeout = 5000,
   ): Promise<XMLHttpRequest['responseType']> {
-    const { method = Methods.GET, data, headers } = options
+    const { data, headers } = options
 
     return new Promise((resolve, reject) => {
       const xhr = new XMLHttpRequest()
