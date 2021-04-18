@@ -2,7 +2,7 @@
   position: relative;
 
   &::before {
-    content: '🔭';
+    content: attr(aria-label);
     position: absolute;
     left: 16px;
     right: auto;

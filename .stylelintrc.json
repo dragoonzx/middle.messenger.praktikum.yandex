@@ -1,0 +1,28 @@
+{
+  "extends": [
+    "@wemake-services/stylelint-config-scss",
+    "stylelint-a11y/recommended"
+  ],
+  "plugins": [
+    "stylelint-no-unsupported-browser-features",
+    "stylelint-a11y"
+  ],
+
+  "rules": {
+    "property-no-unknown": [
+      true, {
+        "ignoreProperties": ["/^var-/"]
+      }
+    ],
+    "plugin/no-unsupported-browser-features": [
+      true, {
+        "severity": "warning",
+        "ignore": ["flexbox"]
+      }
+    ],
+    "a11y/content-property-no-static-value": true
+  },
+  "ignoreFiles": [
+    "dist/**/*.css"
+  ]
+}

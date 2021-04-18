@@ -1,19 +1,17 @@
 :root {
   /* colors: */
-  --color-bg: #22343C;
-  --color-zero: #30444E;
+  --color-bg: rgb(34, 52, 60);
+  --color-zero: rgb(48, 68, 78);
+  --color-success: rgb(61, 213, 152);
+  --color-error: rgb(255, 86, 94);
+  --color-warning: rgb(255, 151, 74);
+  --color-notify: rgb(0, 98, 255);
 
-  --color-success: #3DD598;
-  --color-error: #FF565E;
-  --color-warning: #FF974A;
-  --color-notify: #0062FF;
   /* color with opacity 0.4: */
-  --color-40second: #96A7AF66;
-  --color-40black: #00000066;
-
-  --color-text-primary: #fff;
-  --color-text-second: #96A7AF;
-
+  --color-40second: rgba(150, 167, 175, 0.4);
+  --color-40black: rgba(0, 0, 0, 0.4);
+  --color-text-primary: rgb(255, 255, 255);
+  --color-text-second: rgb(151, 163, 174);
 
   /* z-index layers: */
   --layer-bg: -1;

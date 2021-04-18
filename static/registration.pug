@@ -8,53 +8,12 @@ block append styles
   +link-styles('../src/styles/pages/onboarding.scss')
 
 block content
-  .onboarding
-    .logo.onboarding__logo
-      .logo__icon
-        img(
-          src='images/icons/logo-star.svg'
-        )
-      .logo__title
-        .logo__name SPACEHOUSE
-        .logo__description Cybernetically enhanced communication
-    form.form.login.onboarding__form(
-      onsubmit='return false'
-    )
-      .form__title Регистрация
-      .form__fields
-        each field, key in { email: 'Почта', login: 'Логин', first_name: 'Имя', second_name: 'Фамилия', phone: 'Телефон', password: 'Пароль', password_repeat: 'Пароль (ещё раз)' }
-          label.form__field(
-            data-form-key=key
-          ) #{field}
-            if key === 'email'
-              input.form__field-input(
-                type='email'
-              )
-            else if key === 'phone'
-              input.form__field-input(
-                type='tel'
-              )
-            else if key === 'password' || key === 'password_repeat'
-              input.form__field-input(
-                type='password'
-              )
-            else
-              input.form__field-input
-      button.button.button_primary.form__button Зарегистрироваться
-      //- a(
-      //-   href="chat.pug"
-      //- )
-      //-   button.button.button_primary.form__button(
-      //-     (click)="play()"
-      //-   ) Авторизоваться
-    a.link.link_main.onboarding__link(
-      href='index.pug'
-    ) Войти
-    img.onboarding__jupyter(
-      src='images/jupyter.png'
-    )
+  #root
 
 block append scripts
   script(
-    src='../src/modules/registration/registration.js'
+    src='../src/pages/registration/index.ts'
+  )
+  script(
+    src='../src/modules/registration/index.ts'
   )
