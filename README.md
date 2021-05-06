@@ -8,7 +8,7 @@
 ---
 
 ### Добавьте ниже ссылку на открытый pull request.
-https://github.com/dragoonzx/middle.messenger.praktikum.yandex/pull/1
+https://github.com/dragoonzx/middle.messenger.praktikum.yandex/pull/4
 
 ## Project status:
 In progress
