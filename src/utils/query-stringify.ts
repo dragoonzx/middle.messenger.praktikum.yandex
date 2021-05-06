@@ -1,11 +1,11 @@
-import { MethodsTypes, Methods } from '../api/types'
+import { MethodsTypes, Methods } from '../services/api/types'
 
 function queryStringify(
-  data: Record<string, unknown>,
+  data: Record<string, unknown> | undefined,
   method: MethodsTypes,
 ): string {
   if (method === Methods.GET && data) {
-    let qs = ''
+    let qs = '?'
     for (const [key, value] of Object.entries(data)) {
       const param = `${key}=${value}&`
       qs += param

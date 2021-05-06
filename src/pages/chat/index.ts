@@ -1,11 +1,25 @@
 import pug from 'pug'
 
-import { tmpl } from './index.tmpl'
+import { initChat } from '../../modules/chat/index'
+import { Block } from '../../services/router/types'
+import { initTemplate } from './index.tmpl'
 
-const html = pug.render(tmpl)
+import '../../styles/pages/chat.scss'
 
-const root = document.querySelector('#root')
+const renderHTML = async (): Promise<string> => {
+  const tmpl = await initTemplate()
 
-if (root) {
-  root.innerHTML = html
+  return pug.render(tmpl)
+}
+
+class Chat implements Block {
+  template: Promise<string> = renderHTML()
+
+  init(): void {
+    initChat()
+  }
+}
+
+export {
+  Chat,
 }

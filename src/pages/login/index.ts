@@ -1,11 +1,21 @@
 import pug from 'pug'
 
+import { initLogin } from '../../modules/login/index'
+import { Block } from '../../services/router/types'
 import { tmpl } from './index.tmpl'
+
+import '../../styles/pages/onboarding.scss'
 
 const html = pug.render(tmpl)
 
-const root = document.querySelector('#root')
+class Login implements Block {
+  template: string = html
 
-if (root) {
-  root.innerHTML = html
+  init(): void {
+    initLogin()
+  }
+}
+
+export {
+  Login,
 }

@@ -11,7 +11,7 @@ const fields = {
 
 const tmpl = `.settings
                 a.link(
-                  href='settings-avatar.html'
+                  href='settings-avatar'
                 )
                   .settings__avatar(
                     aria-label='Поменять аватар'

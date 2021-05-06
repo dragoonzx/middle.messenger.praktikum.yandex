@@ -1,6 +1,9 @@
+/* eslint-disable max-len */
+
+const tmpl = `
 .settings
   a.link(
-    href='settings-avatar.pug'
+    href='settings-avatar'
   )
     .settings__avatar(
       aria-label='Поменять аватар'
@@ -19,16 +22,20 @@
     ul.settings__list
       li.settings__list-item
         a.link.link_success(
-          href='settings-data.pug'
+          href='settings-data'
         )
           span.list-item_main Изменить данные
       li.settings__list-item
         a.link.link_success(
-          href='settings-password.pug'
+          href='settings-password'
         )
           span.list-item_main Изменить пароль
       li.settings__list-item
         a.link.link_warning(
+          data-router="logout"
           href='/'
         )
           span.list-item_main Выйти
+`
+
+export { tmpl }

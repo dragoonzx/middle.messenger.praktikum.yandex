@@ -1,3 +1,5 @@
-import { HTTPTransport } from './http-transport'
+import { Auth } from './auth'
+import { Chat } from './chat'
+import { User } from './user'
 
-export { HTTPTransport }
+export { Auth, Chat, User }

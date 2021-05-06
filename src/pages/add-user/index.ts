@@ -1,11 +1,21 @@
 import pug from 'pug'
 
+import { initAddUser } from '../../modules/chat/add-user/index'
+import { Block } from '../../services/router/types'
 import { tmpl } from './index.tmpl'
+
+import '../../styles/pages/chat.scss'
 
 const html = pug.render(tmpl)
 
-const root = document.querySelector('#root')
+class AddUser implements Block {
+  template: string = html
 
-if (root) {
-  root.innerHTML = html
+  init(): void {
+    initAddUser()
+  }
+}
+
+export {
+  AddUser,
 }
