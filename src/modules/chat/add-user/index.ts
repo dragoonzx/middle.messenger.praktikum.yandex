@@ -1,9 +1,15 @@
 import { logFormData } from '../../../utils/index'
 
-const form = document.querySelector('.form')
+const initAddUser = (): void => {
+  const form = document.querySelector('.form')
 
-if (form) {
-  form.addEventListener('submit', () => {
-    logFormData()
-  })
+  if (form) {
+    form.addEventListener('submit', () => {
+      logFormData()
+    })
+  }
+}
+
+export {
+  initAddUser,
 }

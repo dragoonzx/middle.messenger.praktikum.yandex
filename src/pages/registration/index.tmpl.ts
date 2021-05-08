@@ -13,10 +13,6 @@ const fields = {
     'Введите номер телефона в формате +7 ( _ _ _ ) _ _ _ - _ _ - _ _',
   ],
   'password': ['Пароль', 'Пароль должен быть больше 3-х символов'],
-  'password_repeat': [
-    'Пароль (ещё раз)',
-    'Пароль должен быть больше 3-х символов',
-  ],
 }
 
 const tmpl = `.onboarding
@@ -41,14 +37,19 @@ const tmpl = `.onboarding
                         if key === 'email'
                           ${new Input('email')}
                         else if key === 'phone'
-                          ${new Input('tel')}
+                          ${new Input('tel', 'phone')}
                         else if key === 'password' || key === 'password_repeat'
                           ${new Input('password')}
-                        else
-                          ${new Input()}
+                        else if key === 'login'
+                          ${new Input(undefined, 'login')}
+                        else if key === 'first_name'
+                          ${new Input(undefined, 'first_name')}
+                        else if key === 'second_name'
+                          ${new Input(undefined, 'second_name')}
                   button.button.button_primary.form__button Зарегистрироваться
                 a.link.link_main.onboarding__link(
-                  href='index.html'
+                  data-router="login"
+                  href='login'
                 ) Войти
                 img.onboarding__jupyter(
                   src='${jupyter}'

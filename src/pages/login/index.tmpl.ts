@@ -31,10 +31,11 @@ const tmpl = `.onboarding
                         if key === 'password'
                           ${new Input('password')}
                         else
-                          ${new Input()}
+                          ${new Input('login')}
                   button.button.button_primary.form__button Авторизоваться
                 a.link.link_main.onboarding__link(
-                  href='registration.html'
+                  data-router="registration"
+                  href="registration"
                 ) Нет аккаунта?
                 img.onboarding__jupyter(
                   src='${jupyter}'

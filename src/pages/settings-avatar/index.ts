@@ -1,11 +1,22 @@
 import pug from 'pug'
 
+import { initSettingsAvatar }
+  from '../../modules/settings/settings-avatar/index'
+import { Block } from '../../services/router/types'
 import { tmpl } from './index.tmpl'
+
+import '../../styles/pages/settings.scss'
 
 const html = pug.render(tmpl)
 
-const root = document.querySelector('#root')
+class SettingsAvatar implements Block {
+  template: string = html
 
-if (root) {
-  root.innerHTML = html
+  init(): void {
+    initSettingsAvatar()
+  }
+}
+
+export {
+  SettingsAvatar,
 }
