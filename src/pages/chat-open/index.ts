@@ -1,6 +1,7 @@
 import pug from 'pug'
 
 import { Chat, Auth } from '../../api/index'
+import { ChatType } from '../../api/types'
 import { initChat } from '../../modules/chat/index'
 import { ChatService } from '../../services/chat/index'
 import { Block } from '../../services/router/types'
@@ -8,11 +9,11 @@ import { initTemplate } from './index.tmpl'
 
 import '../../styles/pages/chat.scss'
 
-const fetchChats = async (): Promise<string> => {
+const fetchChats = async (): Promise<ChatType[]> => {
   try {
     return await Chat.getChats()
   } catch {
-    return '[]'
+    return []
   }
 }
 
@@ -24,20 +25,19 @@ const initChatService = async (): Promise<ChatService> => {
   const chatService = new ChatService(userInfo.id, chatId)
 
   chatService.init()
-  const mess = await chatService.getMessages()
-  console.log(mess)
+  await chatService.getMessages()
 
   return chatService
 }
 
-const preloadChatData = async (): Promise<{ chat: string }> => {
+const preloadChatData = async (): Promise<{ chat: ChatType | undefined }> => {
   const url = new URL(window.location as unknown as string)
   // eslint-disable-next-line compat/compat
   const params = new URLSearchParams(url.search)
   chatId = Number(params.get('chatId'))
   const chats = await fetchChats()
 
-  const chat = JSON.parse(chats).find((
+  const chat = chats.find((
     chatEntity: { id: number },
   ) => chatEntity.id === chatId)
 
@@ -52,7 +52,7 @@ const renderHTML = async (): Promise<string> => {
   const { chat } = await preloadChatData()
 
   return pug.render(tmpl, {
-    chat,
+    'chat': JSON.stringify(chat),
   })
 }
 

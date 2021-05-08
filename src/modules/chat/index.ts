@@ -23,10 +23,14 @@ const initChat = (chatService?: ChatService):void => {
       event.preventDefault()
       const chatId = (event.currentTarget as HTMLElement).dataset?.id
 
+      if (!chatId) {
+        return
+      }
+
       const url = new URL(window.location as unknown as string)
       // eslint-disable-next-line compat/compat
       const params = new URLSearchParams(url.search)
-      params.set('chatId', chatId ?? '')
+      params.set('chatId', chatId)
 
       router.go(`/chat-open?chatId=${chatId}`)
     })

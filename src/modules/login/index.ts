@@ -33,8 +33,6 @@ const initLogin = (): void => {
         } catch (error) {
           console.log(error)
         }
-
-        // router.go('/chat')
       }
     })
   }

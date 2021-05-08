@@ -2,12 +2,13 @@
 import avatar from 'url:../../../static/images/avatar.png'
 
 import { Chat } from '../../api/index'
+import { ChatType } from '../../api/types'
 
-const fetchChats = async (): Promise<string> => {
+const fetchChats = async (): Promise<ChatType[]> => {
   try {
     return await Chat.getChats()
   } catch {
-    return '[]'
+    return []
   }
 }
 
@@ -30,7 +31,7 @@ const initTemplate = async (): Promise<string> => {
         )
     .chat__userlist-users
       ul.chat__userlist-list
-        each val in ${chats}
+        each val in ${JSON.stringify(chats)}
           li
             a.link(
               data-id=val.id

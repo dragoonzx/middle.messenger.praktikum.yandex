@@ -14,10 +14,10 @@ const initSettingsAvatar = (): void => {
         if (avatarNode) {
           if (fileList && fileValue) {
             avatarNode.textContent = fileValue.name
-            avatarNode.style.color = 'var(--color-warning)'
+            avatarNode.classList.add('avatar_warning')
           } else {
             avatarNode.textContent = 'Нужно выбрать файл'
-            avatarNode.style.color = 'var(--color-error)'
+            avatarNode.classList.add('avatar_error')
           }
         }
       })

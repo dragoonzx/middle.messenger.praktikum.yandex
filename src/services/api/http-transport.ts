@@ -13,7 +13,7 @@ class HTTPTransport implements RESTLayer {
     url: string,
     options: RequestOptions | undefined,
     method: MethodsTypes,
-  ): Promise<XMLHttpRequest['responseType']> {
+  ): Promise<XMLHttpRequest['response']> {
     return this.request(
       url,
       { ...options },
@@ -25,7 +25,7 @@ class HTTPTransport implements RESTLayer {
   get(
     url: string,
     options?: RequestOptions | undefined,
-  ): Promise<XMLHttpRequest['responseType']> {
+  ): Promise<XMLHttpRequest['response']> {
     return this.requestWrapper(
       url,
       options,
@@ -36,7 +36,7 @@ class HTTPTransport implements RESTLayer {
   put(
     url: string,
     options: RequestOptions,
-  ): Promise<XMLHttpRequest['responseType']> {
+  ): Promise<XMLHttpRequest['response']> {
     return this.requestWrapper(
       url,
       options,
@@ -46,8 +46,8 @@ class HTTPTransport implements RESTLayer {
 
   post(
     url: string,
-    options: RequestOptions,
-  ): Promise<XMLHttpRequest['responseType']> {
+    options?: RequestOptions | undefined,
+  ): Promise<XMLHttpRequest['response']> {
     return this.requestWrapper(
       url,
       options,
@@ -58,7 +58,7 @@ class HTTPTransport implements RESTLayer {
   delete(
     url: string,
     options: RequestOptions,
-  ): Promise<XMLHttpRequest['responseType']> {
+  ): Promise<XMLHttpRequest['response']> {
     return this.requestWrapper(
       url,
       options,
@@ -71,7 +71,7 @@ class HTTPTransport implements RESTLayer {
     options: RequestOptions,
     method: MethodsTypes = Methods.GET,
     timeout = 5000,
-  ): Promise<XMLHttpRequest['responseType']> {
+  ): Promise<XMLHttpRequest['response']> {
     const { data, headers } = options
 
     return new Promise((resolve, reject) => {
@@ -82,7 +82,7 @@ class HTTPTransport implements RESTLayer {
       xhr.withCredentials = true
 
       xhr.addEventListener('load', () => {
-        resolve(xhr.response)
+        resolve(JSON.parse(xhr.response))
       })
 
       this.setXhrHeadersAndTimeout(xhr, headers, timeout)

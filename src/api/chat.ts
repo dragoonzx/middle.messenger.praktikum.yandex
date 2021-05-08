@@ -1,8 +1,9 @@
 import { HTTPTransport } from '../services/api/index'
+import { ChatType } from './types'
 
 const http = new HTTPTransport()
 
-async function getChats(): Promise<string> {
+async function getChats(): Promise<ChatType[]> {
   return http.get('/chats', {
     'data': {
       'limit': 20,
@@ -11,7 +12,7 @@ async function getChats(): Promise<string> {
 }
 
 async function getChatToken(id: number): Promise<string> {
-  return http.post(`/chats/token/${id}`, {})
+  return http.post(`/chats/token/${id}`)
 }
 
 async function createChat(title: string): Promise<string> {

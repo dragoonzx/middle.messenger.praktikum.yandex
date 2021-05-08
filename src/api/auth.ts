@@ -16,7 +16,7 @@ async function signUp(data: SignUpDataType): Promise<string> {
 }
 
 async function logout(): Promise<string> {
-  return http.post('/auth/logout', {})
+  return http.post('/auth/logout')
 }
 
 const Auth = {

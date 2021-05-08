@@ -4,7 +4,7 @@ import { SignUpDataType } from './types'
 const http = new HTTPTransport()
 
 async function changeProfile(
-  data: SignUpDataType & { 'display_name': string},
+  data: SignUpDataType & { 'display_name': string },
 ): Promise<string> {
   return http.put('/user/profile', { data })
 }
