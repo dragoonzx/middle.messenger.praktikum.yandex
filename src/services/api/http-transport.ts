@@ -1,4 +1,4 @@
-import { queryStringify } from '../utils/index'
+import { queryStringify } from '../../utils/index'
 import {
   Methods,
   RESTLayer,
@@ -7,23 +7,25 @@ import {
 } from './types'
 
 class HTTPTransport implements RESTLayer {
+  private baseUrl = 'https://ya-praktikum.tech/api/v2'
+
   private requestWrapper(
     url: string,
-    options: RequestOptions,
+    options: RequestOptions | undefined,
     method: MethodsTypes,
-  ): Promise<XMLHttpRequest['responseType']> {
+  ): Promise<XMLHttpRequest['response']> {
     return this.request(
       url,
       { ...options },
       method,
-      options.timeout,
+      options?.timeout,
     )
   }
 
   get(
     url: string,
-    options: RequestOptions,
-  ): Promise<XMLHttpRequest['responseType']> {
+    options?: RequestOptions | undefined,
+  ): Promise<XMLHttpRequest['response']> {
     return this.requestWrapper(
       url,
       options,
@@ -34,7 +36,7 @@ class HTTPTransport implements RESTLayer {
   put(
     url: string,
     options: RequestOptions,
-  ): Promise<XMLHttpRequest['responseType']> {
+  ): Promise<XMLHttpRequest['response']> {
     return this.requestWrapper(
       url,
       options,
@@ -44,8 +46,8 @@ class HTTPTransport implements RESTLayer {
 
   post(
     url: string,
-    options: RequestOptions,
-  ): Promise<XMLHttpRequest['responseType']> {
+    options?: RequestOptions | undefined,
+  ): Promise<XMLHttpRequest['response']> {
     return this.requestWrapper(
       url,
       options,
@@ -56,7 +58,7 @@ class HTTPTransport implements RESTLayer {
   delete(
     url: string,
     options: RequestOptions,
-  ): Promise<XMLHttpRequest['responseType']> {
+  ): Promise<XMLHttpRequest['response']> {
     return this.requestWrapper(
       url,
       options,
@@ -69,15 +71,18 @@ class HTTPTransport implements RESTLayer {
     options: RequestOptions,
     method: MethodsTypes = Methods.GET,
     timeout = 5000,
-  ): Promise<XMLHttpRequest['responseType']> {
+  ): Promise<XMLHttpRequest['response']> {
     const { data, headers } = options
 
     return new Promise((resolve, reject) => {
       const xhr = new XMLHttpRequest()
-      xhr.open(method, url + queryStringify(data, method))
+      xhr.open(method, this.baseUrl + url + queryStringify(data, method))
+
+      xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8')
+      xhr.withCredentials = true
 
       xhr.addEventListener('load', () => {
-        resolve(xhr.response)
+        resolve(JSON.parse(xhr.response))
       })
 
       this.setXhrHeadersAndTimeout(xhr, headers, timeout)
@@ -92,7 +97,7 @@ class HTTPTransport implements RESTLayer {
 
   private setXhrHeadersAndTimeout(
     xhr: XMLHttpRequest,
-    headers: Record<string, string>,
+    headers: Record<string, string> | undefined,
     timeout: number,
   ): void {
     if (headers) {

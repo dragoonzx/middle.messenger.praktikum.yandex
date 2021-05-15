@@ -1,11 +1,23 @@
+/* eslint-disable max-len */
+import avatar from 'url:../../../static/images/avatar.png'
+import addUser from 'url:../../../static/images/icons/chat-add-user.png'
+import deleteChat from 'url:../../../static/images/icons/chat-delete.png'
+import fileChat from 'url:../../../static/images/icons/chat-file.png'
+import location from 'url:../../../static/images/icons/chat-location.png'
+import photo from 'url:../../../static/images/icons/chat-photo.png'
+
+const initTemplate = async (): Promise<string> => {
+  return `
 .chat
   .chat__userlist
     .userlist-settings.chat__userlist-settings
       a.link.link_chat.userlist-settings__link(
-        href='settings.pug'
+        href='settings'
       )
         | Профиль ⚡
-      .search.userlist-settings__search
+      .search.userlist-settings__search(
+        aria-label='🔭'
+      )
         input.chat-input.chat-input_search.search__input(
           type='search'
           placeholder='Поиск'
@@ -17,78 +29,50 @@
             .user__current.active
             .user__avatar
               img(
-                src='images/avatar.png'
+                src='${avatar}'
               )
             .user__contacts
-              .user__name Андрей
-              .user__message Друзья, у меня для вас особенный выпуск новостей!...
+              .user__name #{chat.title}
+              .user__message #{chat.last_message}...
             .user__additional
               .user__time 10:49
-              .user__messages-new 2
-        each val in [1, 2, 3, 4, 5, 6]
-          li
-            .user.user_online.chat__user
-              .user__current
-              .user__avatar
-                img(
-                  src='images/avatar.png'
-                )
-              .user__contacts
-                .user__name Андрей
-                .user__message Друзья, у меня для вас особенный выпуск новостей!...
-              .user__additional
-                .user__time 10:49
-                .user__messages-new 2
-        each val in [7, 1, 1, 1, 1, 1]
-          li
-            .user.chat__user
-              .user__current
-              .user__avatar
-                img(
-                  src='images/avatar.png'
-                )
-              .user__contacts
-                .user__name Андрей
-                .user__message Друзья, у меня для вас особенный выпуск новостей!...
-              .user__additional
-                .user__time 10:49
-                .user__messages-new 4
+              .user__messages-new #{chat.unread_count}
 
   .chat__window.chat__window_active
     .chat__settings-popup
       a.link.settings-popup__prop(
-        href='add-user.pug'
+        href='add-user'
       )
         img.settings-popup__icon(
-          src='images/icons/chat-add-user.png'
+          src='${addUser}'
         )
         | Добавить пользователя
       a.link.settings-popup__prop
         img.settings-popup__icon(
-          src='images/icons/chat-delete.png'
+          src='${deleteChat}'
         )
         | Удалить чат
     .message__attachments-popup
       a.link.settings-popup__prop
         img.settings-popup__icon(
-          src='images/icons/chat-photo.png'
+          src='${photo}'
         )
         | Фото или Видео
       a.link.settings-popup__prop
         img.settings-popup__icon(
-          src='images/icons/chat-file.png'
+          src='${fileChat}'
         )
         | Файл
       a.link.settings-popup__prop
         img.settings-popup__icon(
-          src='images/icons/chat-location.png'
+          src='${location}'
         )
         | Локация
     .chat__user-info
       .user.user_top
         .user__avatar
           img.user__image_top(
-            src='images/avatar.png'
+            src='${avatar}'
           )
         .user__contacts
           .user__name Андрей
@@ -119,7 +103,11 @@
           )
         input.chat-input.message__input(
           type='text'
+          name="message"
           placeholder='Сообщение'
         )
         .message__submit
           input.message__button(type='submit' value='🔥')
+`
+}
+export { initTemplate }

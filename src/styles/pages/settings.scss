@@ -74,6 +74,14 @@
   }
 }
 
+.avatar_warning {
+  color: var(--color-warning);
+}
+
+.avatar_error {
+  color: var(--color-error);
+}
+
 .list-item {
   font-weight: 500;
   font-size: var(--font-size-xs);

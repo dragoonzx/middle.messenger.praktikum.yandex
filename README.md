@@ -45,3 +45,11 @@ To lint styles run this command:
 ```
 npm run lint:styles
 ```
+
+## Testing:
+Mocha, chai & jsdom
+
+To test:
+```
+npm run test
+```

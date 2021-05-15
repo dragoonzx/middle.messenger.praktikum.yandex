@@ -9,7 +9,7 @@ import '../../styles/pages/settings.scss'
 
 const html = pug.render(tmpl)
 
-class SettingsPassword implements Block {
+class Settings implements Block {
   template: string = html
 
   init(): void {
@@ -18,5 +18,5 @@ class SettingsPassword implements Block {
 }
 
 export {
-  SettingsPassword,
+  Settings,
 }

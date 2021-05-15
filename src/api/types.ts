@@ -1,43 +1,39 @@
-enum Methods {
-  GET = 'GET',
-  POST = 'POST',
-  PUT = 'PUT',
-  DELETE = 'DELETE',
+type SignInDataType = {
+  password: string | null
+  login: string | null
 }
 
-type MethodsTypes = keyof typeof Methods
-
-type RequestOptions = {
-  data: Record<string, unknown>
-  headers: Record<string, string>
-  timeout?: number
+type SignUpDataType = {
+  'first_name': string | null
+  'second_name': string | null
+  login: string | null
+  email: string | null
+  password: string | null
+  phone: string | null
 }
 
-interface RESTLayer {
-  get(
-    url: string,
-    options: RequestOptions
-  ): Promise<XMLHttpRequest['responseType']>
-
-  post(
-    url: string,
-    options: RequestOptions
-  ): Promise<XMLHttpRequest['responseType']>
-
-  delete(
-    url: string,
-    options: RequestOptions
-  ): Promise<XMLHttpRequest['responseType']>
-
-  put(
-    url: string,
-    options: RequestOptions
-  ): Promise<XMLHttpRequest['responseType']>
+type ChatType = {
+  id: number
+  title: string
+  avatar: string
+  'unread_count': number
+  'last_message': {
+    user: {
+      'first_name': string
+      'second_name': string
+      'avatar': string
+      'email': string
+      'login': string
+      'phone': string
+    }
+    time: string
+    // eslint-disable-next-line id-blacklist
+    content: string
+  }
 }
 
 export {
-  Methods,
-  RESTLayer,
-  MethodsTypes,
-  RequestOptions,
+  SignInDataType,
+  SignUpDataType,
+  ChatType,
 }
