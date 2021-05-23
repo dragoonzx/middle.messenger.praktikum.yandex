@@ -6,6 +6,7 @@ COPY . .
 RUN npm run build:webpack
 
 FROM steebchen/nginx-spa:stable as production-stage
+COPY nginx.conf /etc/nginx/
 COPY --from=build-stage /app/dist /app
-EXPOSE 80
+# EXPOSE 80
 CMD ["nginx"]
