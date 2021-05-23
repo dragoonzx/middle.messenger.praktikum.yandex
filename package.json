@@ -3,12 +3,18 @@
   "version": "1.0.0",
   "description": "README",
   "scripts": {
-    "dev": "./node_modules/.bin/parcel static/*.pug",
-    "start": "./node_modules/.bin/parcel static/*.pug -p 3000 --no-cache",
-    "build": "./node_modules/.bin/parcel build static/*.pug",
+    "build:webpack": "webpack --mode production",
+    "dev:webpack": "webpack serve --mode development --progress",
     "lint:js": "eslint --cache --ext .js,.ts,.json --ignore-path .gitignore .",
     "lint:styles": "stylelint 'src/styles/**/*.{scss,css}'",
     "test": "mocha -r ts-node/register"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "*.{ts, js}": "eslint --cache --ext .js,.ts,.json --ignore-path .gitignore .",
+    "*.{scss, css}": "stylelint 'src/styles/**/*.{scss,css}'"
   },
   "repository": {
     "type": "git",
@@ -17,9 +23,11 @@
   "browserslist": [
     "defaults",
     "not IE 11",
-    "not OperaMini all",
-    "maintained node versions"
+    "not OperaMini all"
   ],
+  "browser": {
+    "fs": false
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -29,9 +37,6 @@
   "homepage": "https://github.com/dragoonzx/mf.messenger.praktikum.yandex#readme",
   "devDependencies": {
     "@babel/register": "^7.13.16",
-    "@parcel/transformer-image": "2.0.0-beta.2",
-    "@parcel/transformer-pug": "2.0.0-beta.2",
-    "@parcel/transformer-sass": "2.0.0-beta.2",
     "@types/chai": "^4.2.17",
     "@types/jsdom": "^16.2.10",
     "@types/mocha": "^8.2.2",
@@ -41,10 +46,17 @@
     "@wemake-services/eslint-config-javascript": "^0.5.2",
     "@wemake-services/eslint-config-typescript": "^0.5.2",
     "@wemake-services/stylelint-config-scss": "^0.5.0",
+    "assert": "^2.0.0",
+    "awesome-typescript-loader": "^5.2.1",
+    "browser-sync-webpack-plugin": "^2.3.0",
     "chai": "^4.3.4",
+    "circular-dependency-plugin": "^5.2.2",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "css-loader": "^5.2.4",
     "eslint": "^7.23.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-loader": "^4.0.2",
     "eslint-plugin-compat": "^3.9.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-import-helpers": "^1.1.0",
@@ -56,17 +68,34 @@
     "eslint-plugin-standard": "^5.0.0",
     "eslint-plugin-unicorn": "^29.0.0",
     "express": "^4.17.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-inline-source-plugin": "0.0.10",
+    "html-webpack-plugin": "^5.3.1",
     "jsdom": "^16.5.3",
+    "lint-staged": "^11.0.0",
+    "mini-css-extract-plugin": "^1.6.0",
     "mocha": "^8.3.2",
     "mocha-jsdom": "^2.0.0",
-    "parcel": "2.0.0-beta.2",
+    "path-browserify": "^1.0.1",
+    "process": "^0.11.10",
     "pug": "^3.0.2",
+    "pug-loader": "^2.4.0",
     "sass": "^1.32.8",
+    "sass-loader": "^11.1.1",
+    "simple-git-hooks": "^2.4.1",
+    "style-loader": "^2.0.0",
     "stylelint": "^13.12.0",
     "stylelint-a11y": "^1.2.3",
     "stylelint-no-unsupported-browser-features": "^4.1.4",
+    "terser-webpack-plugin": "^5.1.2",
+    "ts-loader": "^9.1.2",
     "ts-node": "^9.1.1",
-    "typescript": "^4.2.4"
+    "typescript": "^4.2.4",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.37.0",
+    "webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-livereload-plugin": "^3.0.1"
   },
   "dependencies": {}
 }

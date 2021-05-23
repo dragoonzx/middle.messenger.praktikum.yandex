@@ -1,4 +1,5 @@
 /* eslint-disable max-len */
+import avatarHigh from '../../../static/images/avatar-high.png'
 
 const tmpl = `
 .settings
@@ -9,7 +10,7 @@ const tmpl = `
       aria-label='Поменять аватар'
     )
       img.settings__image(
-        src='images/avatar-high.png'
+        src='${avatarHigh}'
       )
   .settings__name Иван
   .settings__fields

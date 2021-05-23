@@ -26,7 +26,15 @@ Student project (chat) for yandex praktikum course
 ## How to setup:
 ```
 1. npm i (install dependencies)
-2. npm run start (build project to dist directory with parcel & start share static files on port 3000)
+2. docker build -t mf .
+3. docker run -it -p 8080:80 mf
+
+OR
+
+1. npm i
+2. npm run dev:webpack
+
+Then you can see app running on http://localhost:8080
 ```
 
 ## Linting:
@@ -53,3 +61,6 @@ To test:
 ```
 npm run test
 ```
+
+## Infrastructure
+Docker, webpack, pug

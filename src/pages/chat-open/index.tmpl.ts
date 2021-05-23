@@ -1,10 +1,12 @@
 /* eslint-disable max-len */
-import avatar from 'url:../../../static/images/avatar.png'
-import addUser from 'url:../../../static/images/icons/chat-add-user.png'
-import deleteChat from 'url:../../../static/images/icons/chat-delete.png'
-import fileChat from 'url:../../../static/images/icons/chat-file.png'
-import location from 'url:../../../static/images/icons/chat-location.png'
-import photo from 'url:../../../static/images/icons/chat-photo.png'
+import avatar from '../../../static/images/avatar.png'
+import addUser from '../../../static/images/icons/chat-add-user.png'
+import chatAttach from '../../../static/images/icons/chat-attach.png'
+import deleteChat from '../../../static/images/icons/chat-delete.png'
+import fileChat from '../../../static/images/icons/chat-file.png'
+import location from '../../../static/images/icons/chat-location.png'
+import photo from '../../../static/images/icons/chat-photo.png'
+import topMenu from '../../../static/images/icons/chat-top-menu.png'
 
 const initTemplate = async (): Promise<string> => {
   return `
@@ -78,7 +80,7 @@ const initTemplate = async (): Promise<string> => {
           .user__name Андрей
       .chat__settings
         img(
-          src='images/icons/chat-top-menu.png'
+          src='${topMenu}'
         )
     .chat__dialog
       .dialog__date 19 июня
@@ -99,7 +101,7 @@ const initTemplate = async (): Promise<string> => {
       )
         .message__attach
           img(
-            src='images/icons/chat-attach.png'
+            src='${chatAttach}'
           )
         input.chat-input.message__input(
           type='text'

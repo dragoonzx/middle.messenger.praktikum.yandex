@@ -1,6 +1,5 @@
 /* eslint-disable max-len */
-import avatar from 'url:../../../static/images/avatar.png'
-
+import avatar from '../../../static/images/avatar.png'
 import { Chat } from '../../api/index'
 import { ChatType } from '../../api/types'
 

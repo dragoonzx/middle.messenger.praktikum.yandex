@@ -1,4 +1,4 @@
-import avatarHigh from 'url:../../../static/images/avatar-high.png'
+import avatarHigh from '../../../static/images/avatar-high.png'
 
 const fields = {
   'email': ['Почта', 'pochta@yandex.ru'],
