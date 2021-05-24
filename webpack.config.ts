@@ -117,6 +117,7 @@ module.exports = {
     'contentBase': PATHS.dist,
     'watchContentBase': true,
     'historyApiFallback': true,
+    'port': 3000,
   },
 
   'optimization': {

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "README",
   "scripts": {
+    "start": "npm run dev:webpack",
     "build:webpack": "webpack --mode production",
     "dev:webpack": "webpack serve --mode development --progress",
     "lint:js": "eslint --cache --ext .js,.ts,.json --ignore-path .gitignore .",
