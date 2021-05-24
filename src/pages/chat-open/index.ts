@@ -20,7 +20,7 @@ const fetchChats = async (): Promise<ChatType[]> => {
 let chatId: number
 
 const initChatService = async (): Promise<ChatService> => {
-  const userInfo = JSON.parse(await Auth.getUserInfo())
+  const userInfo = await Auth.getUserInfo() as unknown as { id: number }
 
   const chatService = new ChatService(userInfo.id, chatId)
 
@@ -41,6 +41,11 @@ const preloadChatData = async (): Promise<{ chat: ChatType | undefined }> => {
     chatEntity: { id: number },
   ) => chatEntity.id === chatId)
 
+  if (chat?.last_message) {
+    chat.last_message =
+      JSON.parse(chat.last_message as unknown as string).content
+  }
+
   return {
     chat,
   }
@@ -51,8 +56,12 @@ const renderHTML = async (): Promise<string> => {
 
   const { chat } = await preloadChatData()
 
+  if (!chat) {
+    return pug.render(tmpl)
+  }
+
   return pug.render(tmpl, {
-    'chat': JSON.stringify(chat),
+    chat,
   })
 }
 

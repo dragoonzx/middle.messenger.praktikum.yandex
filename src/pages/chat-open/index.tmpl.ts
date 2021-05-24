@@ -35,7 +35,7 @@ const initTemplate = async (): Promise<string> => {
               )
             .user__contacts
               .user__name #{chat.title}
-              .user__message #{chat.last_message}...
+              .user__message #{chat.last_message}
             .user__additional
               .user__time 10:49
               .user__messages-new #{chat.unread_count}

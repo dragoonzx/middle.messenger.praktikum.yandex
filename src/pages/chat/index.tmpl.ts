@@ -13,6 +13,17 @@ const fetchChats = async (): Promise<ChatType[]> => {
 
 const initTemplate = async (): Promise<string> => {
   const chats = await fetchChats()
+
+  const filteredChats = chats.map((chat) => {
+    return {
+      'id': chat.id,
+      'avatar': chat.avatar,
+      'title': chat.title,
+      'last_message': chat.last_message ? JSON.parse(chat.last_message as unknown as string).content : '...',
+      'unread_count': chat.unread_count,
+    }
+  })
+
   return `
 .chat
   .chat__userlist
@@ -30,7 +41,7 @@ const initTemplate = async (): Promise<string> => {
         )
     .chat__userlist-users
       ul.chat__userlist-list
-        each val in ${JSON.stringify(chats)}
+        each val in ${JSON.stringify(filteredChats)}
           li
             a.link(
               data-id=val.id
@@ -45,7 +56,7 @@ const initTemplate = async (): Promise<string> => {
                 .user__contacts
                   .user__name #{val.title}
                   .user__message
-                    | #{val.last_message}...
+                    | #{val.last_message}
                 .user__additional
                   .user__time 10:49
                   .user__messages-new #{val.unread_count}
