@@ -4,6 +4,7 @@
   "description": "README",
   "scripts": {
     "start": "npm run dev:webpack",
+    "build": "npm run build:webpack",
     "build:webpack": "webpack --mode production",
     "dev:webpack": "webpack serve --mode development --progress",
     "lint:js": "eslint --cache --ext .js,.ts,.json --ignore-path .gitignore .",
