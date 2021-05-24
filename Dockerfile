@@ -7,6 +7,7 @@ RUN npm run build:webpack
 
 FROM steebchen/nginx-spa:stable as production-stage
 COPY nginx.conf /etc/nginx/
+COPY default.conf.template /etc/nginx/conf.d/default.conf.template
 COPY --from=build-stage /app/dist /app
 # EXPOSE 80
-CMD ["nginx"]
+CMD envsubst '\$PORT' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'
