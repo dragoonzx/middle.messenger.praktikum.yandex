@@ -30,8 +30,8 @@ jobs:
       run: bash tests-second-floor/1_sprint/check_github_link.sh
     - name: Check npm run start existence
       run: bash tests-second-floor/1_sprint/check_start.sh
-    - name: Check Parcel in start script
-      run: bash tests-second-floor/1_sprint/check_parcel.sh
+    # - name: Check Parcel in start script
+    #   run: bash tests-second-floor/1_sprint/check_parcel.sh
     - name: Check PORT 3000
       run: bash tests-second-floor/1_sprint/check_port.sh
     - name: Check routing

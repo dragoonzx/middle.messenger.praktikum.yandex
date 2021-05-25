@@ -1,6 +1,5 @@
-import logo from 'url:../../../static/images/icons/logo-star.svg'
-import jupyter from 'url:../../../static/images/jupyter.png'
-
+import logo from '../../../static/images/icons/logo-star.svg'
+import jupyter from '../../../static/images/jupyter.png'
 import { Input } from '../../components/input/index'
 
 const fields = {

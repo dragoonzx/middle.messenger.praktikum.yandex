@@ -10,7 +10,10 @@ declare module '*.png' {
 
 declare module 'pug' {
   const pug: {
-    render(template: string, options?: Record<string, string>): string
+    render(
+      template: string,
+      options?: Record<string, string | Record<string, unknown>>
+    ): string
   }
   export default pug
 }

@@ -64,7 +64,10 @@ class ChatService {
         this.destroy()
       }
 
-      const token = JSON.parse(await Chat.getChatToken(this.chatId)).token
+      const token =
+        (await Chat.getChatToken(
+          this.chatId,
+        ) as unknown as { token: string }).token
 
       this.url = `${this.baseURL}/${this.userId}/${this.chatId}/${token}`
 

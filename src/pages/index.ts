@@ -1,4 +1,6 @@
 import { router } from '../services/router/index'
+import { Error404 } from './404/index'
+import { Error500 } from './500/index'
 import { AddUser } from './add-user/index'
 import { ChatOpen } from './chat-open/index'
 import { Chat } from './chat/index'
@@ -9,6 +11,8 @@ import { SettingsAvatar } from './settings-avatar/index'
 import { SettingsData } from './settings-data/index'
 import { SettingsPassword } from './settings-password/index'
 import { Settings } from './settings/index'
+
+import '../styles/main.scss'
 
 router
   .use(SITEMAP.index, Login)
@@ -21,4 +25,6 @@ router
   .use(SITEMAP['settings-avatar'], SettingsAvatar)
   .use(SITEMAP['settings-data'], SettingsData)
   .use(SITEMAP['settings-password'], SettingsPassword)
+  .use(SITEMAP[404], Error404)
+  .use(SITEMAP[500], Error500)
   .start()

@@ -88,7 +88,7 @@ class Router<Type> {
     const route = this.getRoute(pathname)
 
     if (!route) {
-      // window.location.href = '/404.html'
+      window.location.pathname = '404'
       return
     }
 

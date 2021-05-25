@@ -9,6 +9,8 @@ const SITEMAP = {
   'settings-data': '/settings-data',
   'settings-password': '/settings-password',
   'add-user': '/add-user',
+  '404': '/404',
+  '500': '/500',
 }
 
 export {
